@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DotaChallenge.Models
+namespace MvcProject1.Models
 {
     using System;
     using System.Collections.Generic;
