@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using PortableSteam;
 
-namespace DotaChallenge.Controllers
+namespace MvcProject1.Controllers
 {
     public class SteamIdController : Controller
     {

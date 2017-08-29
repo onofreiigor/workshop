@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 
-namespace DotaChallenge.Controllers
+namespace MvcProject1.Controllers
 {
     public class RegistrationController : Controller
     {

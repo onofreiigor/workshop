@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MvcProject1.Models;
 
 namespace MvcProject1
 {
@@ -13,6 +16,9 @@ namespace MvcProject1
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ChallengeDataBase db = new ChallengeDataBase();
+            SqlConnection sqlConn = db.ConnectDataBase();
+            Debug.WriteLine(sqlConn);
         }
     }
 }

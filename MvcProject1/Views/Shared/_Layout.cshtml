@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Data.SqlClient
+@using MvcProject1.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,22 +15,30 @@
         <div class="container">
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-                            <span class="caret"></span></a>
+                            @Html.ActionLink("Challenge", "Index", "Challenge", new { area = "" }, new { @class = "dropdown-toggle", data_toggle = "dropdown" })
                         <ul class="dropdown-menu">
-                            <li><a href="#">Page 1-1</a></li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
+                            @{
+                                ChallengeDataBase db = new ChallengeDataBase();
+                                SqlConnection sqlConn = db.ConnectDataBase();
+                                SqlCommand cmd = new SqlCommand("select * from challenges", sqlConn);
+                                SqlDataReader chList = cmd.ExecuteReader();
+                                while (chList.Read())
+                                {
+                                    <li>
+                                        @Html.ActionLink(chList.GetValue(1), "Index", "Challenge", new { area = "" }, new { @class = "navbar-brand" })
+                                    </li>
+                                }
+                            }
                         </ul>
                     </li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
+                    <li>
+                        @Html.ActionLink("Registration", "Index", "Registration", new {area = ""}, new { @class = "" })
+                    </li>
                 </ul>
-                @Html.ActionLink("Home", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
-                @Html.ActionLink("Challenge", "Index", "Challenge", new {area = ""}, new {@class = "navbar-brand"})
-                @Html.ActionLink("Registration", "Index", "Registration", new {area = ""}, new {@class = "navbar-brand"})
             </div>
         </div>
     </div>
