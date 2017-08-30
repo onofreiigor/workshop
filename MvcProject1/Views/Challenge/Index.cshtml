@@ -1,7 +1,20 @@
-﻿
+﻿@model IEnumerable<MvcProject1.Models.Challenges>
+
 @{
     ViewBag.Title = "Challenge";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Challenge</h2>
+<h2>Challenges</h2>
+<table class="table table-hover">
+    <tbody>
+    @foreach (var el in Model)
+    {
+        <tr onclick="location.href='@Url.Action("Detail", "Challenge")'" style="cursor: pointer">
+            <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
+            <td>@Html.DisplayFor(modelItem => el.ChallengeName)</td>
+            <td>@Html.DisplayFor(modelItem => el.ChallengeDesc)</td>
+        </tr>
+    }
+    </tbody>
+</table>

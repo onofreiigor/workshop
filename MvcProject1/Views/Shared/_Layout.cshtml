@@ -14,31 +14,9 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li class="dropdown">
-                            @Html.ActionLink("Challenge", "Index", "Challenge", new { area = "" }, new { @class = "dropdown-toggle", data_toggle = "dropdown" })
-                        <ul class="dropdown-menu">
-                            @{
-                                ChallengeDataBase db = new ChallengeDataBase();
-                                SqlConnection sqlConn = db.ConnectDataBase();
-                                SqlCommand cmd = new SqlCommand("select * from challenges", sqlConn);
-                                SqlDataReader chList = cmd.ExecuteReader();
-                                while (chList.Read())
-                                {
-                                    <li>
-                                        @Html.ActionLink(chList.GetValue(1), "Index", "Challenge", new { area = "" }, new { @class = "navbar-brand" })
-                                    </li>
-                                }
-                            }
-                        </ul>
-                    </li>
-                    <li>
-                        @Html.ActionLink("Registration", "Index", "Registration", new {area = ""}, new { @class = "" })
-                    </li>
-                </ul>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Challenges", "Index", "Challenge", new {area = ""}, new { @class = "navbar-brand" })
+                @Html.ActionLink("Registration", "Index", "Registration", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
     </div>

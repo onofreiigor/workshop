@@ -20,6 +20,7 @@ namespace MvcProject1.Models
             }
             catch (SqlException ex)
             {
+                Console.WriteLine("----------------------------------------------\nData Base Connection error\n" + ex.Message + "----------------------------------------\n");
                 return null;
             }
             return sqlConn;
