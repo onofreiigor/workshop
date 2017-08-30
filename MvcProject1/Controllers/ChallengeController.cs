@@ -25,8 +25,9 @@ namespace MvcProject1.Controllers
             return View(chList);
         }
 
-        public ActionResult Detail()
+        public ActionResult Detail(int id)
         {
+            
             return View();
         }
     }
