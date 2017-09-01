@@ -1,9 +1,29 @@
-﻿
+﻿@model IEnumerable<MvcProject1.Models.ChallengeDetail>
+
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detail</h2>
-
-
+<h2>TOP Challenge</h2>
+<table class="table table-hover">
+    <tbody>
+    @foreach (var el in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => el.DetailId)</td>
+            <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
+            <td>@Html.DisplayFor(modelItem => el.MatchId)</td>
+            <td>@Html.DisplayFor(modelItem => el.UserId)</td>
+            <td>@Html.DisplayFor(modelItem => el.UserName)</td>
+            <td>@Html.DisplayFor(modelItem => el.HerroName)</td>
+            <td>@Html.DisplayFor(modelItem => el.HeroLevel)</td>
+            <td>@Html.DisplayFor(modelItem => el.Score)</td>
+            <td>@Html.DisplayFor(modelItem => el.GameDuration)</td>
+            <td>@Html.DisplayFor(modelItem => el.InventoryId)</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 2})'" id="vertival-button-next" name="singlebutton" class="">Next</button>
+<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 1})'" id="vertival-button-prev" name="singlebutton" class="">Prev</button>

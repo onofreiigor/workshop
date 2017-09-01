@@ -10,7 +10,11 @@
     <tbody>
     @foreach (var el in Model)
     {
-        <tr onclick="location.href='@Url.Action("Detail", "Challenge", new { id = el.ChallengeId })'" style="cursor: pointer; margin-top: 5px">
+        <tr onclick="location.href='@Url.Action("Detail", "Challenge", new
+                               {
+                                   id = el.ChallengeId,
+                                   name = el.ChallengeName
+                               })'" style="cursor: pointer; margin-top: 5px">
             <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
             <td>@Html.DisplayFor(modelItem => el.ChallengeName)</td>
             <td>@Html.DisplayFor(modelItem => el.ChallengeDesc)</td>

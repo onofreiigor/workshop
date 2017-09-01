@@ -17,3 +17,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#vertival-button-prev {
+    position: fixed;
+    top: 50%;
+    left: 3%;
+}
+
+#vertival-button-next {
+    position: fixed;
+    top: 50%;
+    right: 3%;
+}

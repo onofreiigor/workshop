@@ -12,13 +12,13 @@ namespace MvcProject1
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static SqlConnection sqlConn;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ChallengeDataBase db = new ChallengeDataBase();
-            SqlConnection sqlConn = db.ConnectDataBase();
-            Debug.WriteLine(sqlConn);
+            sqlConn = ChallengeDataBase.ConnectDataBase();
         }
     }
 }
