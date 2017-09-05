@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcProject1.Models.ChallengeDetail>
+﻿@model MvcProject1.Models.Challenges
 
 @{
     ViewBag.Title = "Detail";
@@ -8,7 +8,7 @@
 <h2>TOP Challenge</h2>
 <table class="table table-hover">
     <tbody>
-    @foreach (var el in Model)
+    @foreach (var el in Model.ChallengeDetails)
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => el.DetailId)</td>
@@ -25,5 +25,13 @@
     }
     </tbody>
 </table>
+@{
+    int nextCh;
+    int prevCh;
+    if (Model.ChallengeDetails.Count > 0)
+    {
+        
+    }
+}
 <button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 2})'" id="vertival-button-next" name="singlebutton" class="">Next</button>
 <button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 1})'" id="vertival-button-prev" name="singlebutton" class="">Prev</button>

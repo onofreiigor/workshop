@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using MvcProject1.Models;
+using PortableSteam;
 
 namespace MvcProject1
 {
@@ -18,7 +19,10 @@ namespace MvcProject1
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //my connection
             sqlConn = ChallengeDataBase.ConnectDataBase();
+            SteamWebAPI.SetGlobalKey("4CE963A0198750BC26CF9355706F2686");
         }
     }
 }

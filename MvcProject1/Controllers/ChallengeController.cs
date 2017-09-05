@@ -31,15 +31,15 @@ namespace MvcProject1.Controllers
             return View(chList);
         }
 
-        public ActionResult Detail(int? id)
+        public ActionResult Detail(Challenges ch)
         {
             List<ChallengeExtend> exList = new List<ChallengeExtend>();
             List<ChallengeDetail> dtList = new List<ChallengeDetail>();
-            if (id.HasValue == false)
+            if (ch.GetHashCode() != 0)
             {
-                return View(dtList);
+                return View(ch);
             }
-            SqlCommand comm = new SqlCommand("select * from challengedetail where challengeid = " + id, conn);
+            SqlCommand comm = new SqlCommand("select * from challengedetail where challengeid = " + ch.ChallengeId, conn);
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
@@ -58,7 +58,7 @@ namespace MvcProject1.Controllers
                 });
             }
             reader.Close();
-            return View(dtList);
+            return View(ch);
         }
     }
 }

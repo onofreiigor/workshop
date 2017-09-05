@@ -7,8 +7,8 @@ namespace MvcProject1.Models
 {
     public class ChallengeExtend
     {
-        public IEnumerable<Challenges> Challengeses { get; set; }
-        public IEnumerable<ChallengeDetail> ChallengeDetails { get; set; }
+        public List<Challenges> Challengeses { get; set; }
+        public List<ChallengeDetail> ChallengeDetails { get; set; }
         //public Challenges Challenges { get; set; }
         //public ChallengeDetail ChallengeDetail { get; set; }
     }
@@ -18,6 +18,7 @@ namespace MvcProject1.Models
         public int ChallengeId { get; set; }
         public string ChallengeName { get; set; }
         public string ChallengeDesc { get; set; }
+        public List<ChallengeDetail> ChallengeDetails { get; set; }
     }
 
     public class ChallengeDetail

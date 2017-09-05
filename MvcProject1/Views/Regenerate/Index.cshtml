@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MvcProject1.Models.Match
+
+<h2>Match ID: @Html.DisplayFor(mt => Model.MatchId)</h2>
+<div class="table-responsive">          
+    <table class="table">
+        <thead>
+        <tr>
+            <th>SteamId</th>
+            <th>HeroId</th>
+            <th>Kills</th>
+            <th>Deaths</th>
+            <th>Assists</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var el in Model.Players)
+        {
+            <tr>
+                <td>@Html.DisplayFor(pl => el.SteamId)</td>
+                <td>@Html.DisplayFor(pl => el.HeroId)</td>
+                <td>@Html.DisplayFor(pl => el.Kills)</td>
+                <td>@Html.DisplayFor(pl => el.Deaths)</td>
+                <td>@Html.DisplayFor(pl => el.Assist)</td>
+            </tr>   
+        }
+        </tbody>
+    </table>
+</div>
