@@ -16,6 +16,7 @@
             <th>Kills</th>
             <th>Deaths</th>
             <th>Assists</th>
+            <th>Items</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,14 @@
                 <td>@Html.DisplayFor(pl => el.Kills)</td>
                 <td>@Html.DisplayFor(pl => el.Deaths)</td>
                 <td>@Html.DisplayFor(pl => el.Assist)</td>
+                <td>
+                    <img src="@Url.Content(el.Items[0].IconPath)" alt="Image" width="30px" height="28px" />
+                    <img src="@Url.Content(el.Items[1].IconPath)" alt="Image" width="30px" height="28px" />
+                    <img src="@Url.Content(el.Items[2].IconPath)" alt="Image" width="30px" height="28px" /><br/>
+                    <img src="@Url.Content(el.Items[3].IconPath)" alt="Image" width="30px" height="28px" />
+                    <img src="@Url.Content(el.Items[4].IconPath)" alt="Image" width="30px" height="28px" />
+                    <img src="@Url.Content(el.Items[5].IconPath)" alt="Image" width="30px" height="28px"/>
+                </td>
             </tr>   
         }
         </tbody>

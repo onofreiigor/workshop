@@ -179,3 +179,4 @@ C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Mvc.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.csproj.App.config
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.pdb
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.csprojResolveAssemblyReference.cache
