@@ -14,9 +14,15 @@ namespace MvcProject1.Models
     public class Player
     {
         public long SteamId { get; set; }
-        public int HeroId { get; set; }
-        public int Kills { get; set; }
-        public int Deaths { get; set; }
-        public int Assist { get; set; }
+        public uint HeroId { get; set; }
+        public uint Kills { get; set; }
+        public uint Deaths { get; set; }
+        public uint Assist { get; set; }
+        public string Item0 { get; set; }
+        public string Item1 { get; set; }
+        public string Item2 { get; set; }
+        public string Item3 { get; set; }
+        public string Item4 { get; set; }
+        public string Item5  { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace MvcProject1.Controllers
 {
     public class ChallengeController : Controller
     {
-        private static SqlConnection conn = MvcApplication.sqlConn;
+        private static SqlConnection conn = MvcApplication.SqlConn;
 
         private static List<Challenges> challengeList = InitChallenge();
 

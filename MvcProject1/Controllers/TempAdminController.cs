@@ -16,7 +16,7 @@ namespace MvcProject1.Controllers
         public ActionResult Index()
         {
             
-            DataTable dt = MvcApplication.sqlConn.GetSchema("Tables");
+            DataTable dt = MvcApplication.SqlConn.GetSchema("Tables");
             foreach (DataRow dr in dt.Rows)
             {
                 Debug.WriteLine(dr.ToString());

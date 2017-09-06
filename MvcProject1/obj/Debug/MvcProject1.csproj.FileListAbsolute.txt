@@ -145,12 +145,14 @@ C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\roslyn\VBCSCompiler.exe.co
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\MvcProject1.dll.config
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\MvcProject1.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\MvcProject1.pdb
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\AutoMapper.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\EntityFramework.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\EntityFramework.SqlServer.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Newtonsoft.Json.dll
-C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\PortableSteam.dll
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Steam.Models.dll
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\SteamWebAPI2.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Net.Http.Extensions.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Net.Http.Primitives.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Helpers.dll
@@ -159,10 +161,13 @@ C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Razor.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Webpages.Deployment.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Webpages.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Webpages.Razor.dll
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\AutoMapper.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\EntityFramework.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\EntityFramework.SqlServer.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Newtonsoft.Json.xml
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\Steam.Models.pdb
+C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\SteamWebAPI2.pdb
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Net.Http.Extensions.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Net.Http.Primitives.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Razor.xml
@@ -172,6 +177,5 @@ C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Webpages.Razor.
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Helpers.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\bin\System.Web.Mvc.xml
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.csproj.App.config
-C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.csprojResolveAssemblyReference.cache
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.dll
 C:\Users\Ionofrei\Documents\MyProject\MvcProject1\obj\Debug\MvcProject1.pdb
