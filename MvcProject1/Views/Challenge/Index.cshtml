@@ -12,7 +12,7 @@
     {
         <tr onclick="location.href='@Url.Action("Detail", "Challenge", new
                                {
-                                   ch = el
+                                   id = el.ChallengeId
                                })'" style="cursor: pointer; margin-top: 5px">
             <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
             <td>@Html.DisplayFor(modelItem => el.ChallengeName)</td>

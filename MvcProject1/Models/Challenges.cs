@@ -18,6 +18,8 @@ namespace MvcProject1.Models
         public int ChallengeId { get; set; }
         public string ChallengeName { get; set; }
         public string ChallengeDesc { get; set; }
+        public int NextCh { get; set; }
+        public int PrevCh { get; set; }
         public List<ChallengeDetail> ChallengeDetails { get; set; }
     }
 

@@ -5,33 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>TOP Challenge</h2>
+<h2>TOP Challenge: @Html.DisplayFor(x => Model.ChallengeName)</h2>
 <table class="table table-hover">
     <tbody>
-    @foreach (var el in Model.ChallengeDetails)
+    @for (int i = 0; i < Model.ChallengeDetails.Count; i++)
     {
         <tr>
-            <td>@Html.DisplayFor(modelItem => el.DetailId)</td>
-            <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
-            <td>@Html.DisplayFor(modelItem => el.MatchId)</td>
-            <td>@Html.DisplayFor(modelItem => el.UserId)</td>
-            <td>@Html.DisplayFor(modelItem => el.UserName)</td>
-            <td>@Html.DisplayFor(modelItem => el.HerroName)</td>
-            <td>@Html.DisplayFor(modelItem => el.HeroLevel)</td>
-            <td>@Html.DisplayFor(modelItem => el.Score)</td>
-            <td>@Html.DisplayFor(modelItem => el.GameDuration)</td>
-            <td>@Html.DisplayFor(modelItem => el.InventoryId)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].DetailId)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].ChallengeId)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].MatchId)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].UserId)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].UserName)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].HerroName)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].HeroLevel)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].Score)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].GameDuration)</td>
+            <td>@Html.DisplayFor(modelItem => Model.ChallengeDetails[i].InventoryId)</td>
         </tr>
     }
     </tbody>
 </table>
-@{
-    int nextCh;
-    int prevCh;
-    if (Model.ChallengeDetails.Count > 0)
-    {
-        
-    }
-}
-<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 2})'" id="vertival-button-next" name="singlebutton" class="">Next</button>
-<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = 1})'" id="vertival-button-prev" name="singlebutton" class="">Prev</button>
+<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = Model.NextCh })'" id="vertival-button-next" name="singlebutton" class="">Next</button>
+<button onclick="location.href='@Url.Action("Detail", "Challenge", new { id = Model.PrevCh })'" id="vertival-button-prev" name="singlebutton" class="">Prev</button>

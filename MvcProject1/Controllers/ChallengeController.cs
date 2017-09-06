@@ -10,40 +10,30 @@ namespace MvcProject1.Controllers
 {
     public class ChallengeController : Controller
     {
-        private SqlConnection conn = MvcApplication.sqlConn;
+        private static SqlConnection conn = MvcApplication.sqlConn;
+
+        private static List<Challenges> challengeList = InitChallenge();
 
         // GET: Challenge
         public ActionResult Index()
         {
-            List<Challenges> chList = new List<Challenges>();
-            SqlCommand comm = new SqlCommand("select * from challenges", conn);
-            SqlDataReader reader = comm.ExecuteReader();
-            while (reader.Read())
-            {
-                chList.Add(new Challenges()
-                {
-                    ChallengeId = reader.GetInt32(0),
-                    ChallengeName = reader.GetString(1),
-                    ChallengeDesc = reader.GetString(2)
-                });
-            }
-            reader.Close();
-            return View(chList);
+            return View(challengeList);
         }
 
-        public ActionResult Detail(Challenges ch)
+        public ActionResult Detail(int? id)
         {
-            List<ChallengeExtend> exList = new List<ChallengeExtend>();
-            List<ChallengeDetail> dtList = new List<ChallengeDetail>();
-            if (ch.GetHashCode() != 0)
-            {
+            Challenges ch = new Challenges();
+            if (id == null)
                 return View(ch);
-            }
+            ch = challengeList.FirstOrDefault(x => x.ChallengeId == id);
+            if (ch.GetHashCode() == 0)
+                return View(ch);
+            ch.ChallengeDetails = new List<ChallengeDetail>();
             SqlCommand comm = new SqlCommand("select * from challengedetail where challengeid = " + ch.ChallengeId, conn);
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
-                dtList.Add(new ChallengeDetail()
+                ch.ChallengeDetails.Add(new ChallengeDetail()
                 {
                     DetailId = reader.GetInt32(0),
                     ChallengeId = reader.GetInt32(1),
@@ -59,6 +49,29 @@ namespace MvcProject1.Controllers
             }
             reader.Close();
             return View(ch);
+        }
+
+        public static List<Challenges> InitChallenge()
+        {
+            List<Challenges> chList = new List<Challenges>();
+            SqlCommand comm = new SqlCommand("select * from challenges", conn);
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+                chList.Add(new Challenges()
+                {
+                    ChallengeId = reader.GetInt32(0),
+                    ChallengeName = reader.GetString(1),
+                    ChallengeDesc = reader.GetString(2)
+                });
+            }
+            reader.Close();
+            for (int i = 0; i < chList.Count; i++)
+            {
+                chList[i].NextCh = i + 1 < chList.Count ? chList[i + 1].ChallengeId : chList[0].ChallengeId;
+                chList[i].PrevCh = i - 1 >= 0 ? chList[i - 1].ChallengeId : chList[chList.Count - 1].ChallengeId;
+            }
+            return (chList);
         }
     }
 }
