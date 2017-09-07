@@ -43,20 +43,22 @@ namespace MvcProject1.Models
 
             public Player GetPlayer(MatchPlayerModel playerM)
             {
-                Player player = new Player();
-                player.SteamId = playerM.AccountId;
-                player.HeroId = playerM.PlayerSlot;
-                player.Kills = playerM.Kills;
-                player.Deaths = playerM.Deaths;
-                player.Assist = playerM.Assists;
-                player.Items = new List<Item>
+                Player player = new Player
                 {
-                    new Item().GetItemById(playerM.Item0),
-                    new Item().GetItemById(playerM.Item1),
-                    new Item().GetItemById(playerM.Item2),
-                    new Item().GetItemById(playerM.Item3),
-                    new Item().GetItemById(playerM.Item4),
-                    new Item().GetItemById(playerM.Item5)
+                    SteamId = playerM.AccountId,
+                    HeroId = playerM.PlayerSlot,
+                    Kills = playerM.Kills,
+                    Deaths = playerM.Deaths,
+                    Assist = playerM.Assists,
+                    Items = new List<Item>
+                    {
+                        new Item().GetItemById(playerM.Item0),
+                        new Item().GetItemById(playerM.Item1),
+                        new Item().GetItemById(playerM.Item2),
+                        new Item().GetItemById(playerM.Item3),
+                        new Item().GetItemById(playerM.Item4),
+                        new Item().GetItemById(playerM.Item5)
+                    }
                 };
                 return player;
             }
@@ -70,9 +72,11 @@ namespace MvcProject1.Models
 
             public Item GetItemById(uint itemId)
             {
-                Item it = new Item();
-                it.ItemId = itemId;
-                it.ItemName = AllItem.FirstOrDefault(x => x.Id == itemId)?.Name;
+                Item it = new Item
+                {
+                    ItemId = itemId,
+                    ItemName = AllItem.FirstOrDefault(x => x.Id == itemId)?.Name
+                };
                 if (it.ItemName != null)
                 {
                     it.ItemName = it.ItemName.Substring(5);
