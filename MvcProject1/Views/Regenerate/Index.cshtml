@@ -1,10 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model MvcProject1.Models.Match
+@model MvcProject1.Models.Global.Match
 
 <h2>Match ID: @Html.DisplayFor(mt => Model.MatchId)</h2>
 <div class="table-responsive">          
@@ -29,12 +28,12 @@
                 <td>@Html.DisplayFor(pl => el.Deaths)</td>
                 <td>@Html.DisplayFor(pl => el.Assist)</td>
                 <td>
-                    <img src="@Url.Content(el.Items[0].IconPath)" alt="Image" width="30px" height="28px" />
-                    <img src="@Url.Content(el.Items[1].IconPath)" alt="Image" width="30px" height="28px" />
-                    <img src="@Url.Content(el.Items[2].IconPath)" alt="Image" width="30px" height="28px" /><br/>
-                    <img src="@Url.Content(el.Items[3].IconPath)" alt="Image" width="30px" height="28px" />
-                    <img src="@Url.Content(el.Items[4].IconPath)" alt="Image" width="30px" height="28px" />
-                    <img src="@Url.Content(el.Items[5].IconPath)" alt="Image" width="30px" height="28px"/>
+                    <img src="@Url.Content(el.Items[0].IconPath)" alt="" width="32px" height="28px" style="margin-bottom: 2px" />
+                    <img src="@Url.Content(el.Items[1].IconPath)" alt="" width="32px" height="28px" style="margin-bottom: 2px" />
+                    <img src="@Url.Content(el.Items[2].IconPath)" alt="" width="32px" height="28px" style="margin-bottom: 2px" /><br/>
+                    <img src="@Url.Content(el.Items[3].IconPath)" alt="" width="32px" height="28px" />
+                    <img src="@Url.Content(el.Items[4].IconPath)" alt="" width="32px" height="28px" />
+                    <img src="@Url.Content(el.Items[5].IconPath)" alt="" width="32px" height="28px"/>
                 </td>
             </tr>   
         }
