@@ -6,17 +6,28 @@
 }
 
 <h2>Challenges</h2>
-<table class="table table-hover">
+<table class="table table-hover" id="challenges-table">
+    <thead>
+        <tr>
+            <th>Challenge</th>
+            <th>The Best Score</th>
+            <th>Total Attempt</th>
+        </tr>
+    </thead>
     <tbody>
     @foreach (var el in Model)
     {
-        <tr onclick="location.href='@Url.Action("Detail", "Challenge", new
-                               {
-                                   id = el.ChallengeId
-                               })'" style="cursor: pointer;">
-            <td>@Html.DisplayFor(modelItem => el.ChallengeId)</td>
-            <td>@Html.DisplayFor(modelItem => el.ChallengeName)</td>
-            <td>@Html.DisplayFor(modelItem => el.ChallengeDesc)</td>
+        <tr onclick="location.href = '@Url.Action("Detail", "Challenge", new
+                                      {
+                                          id = el.ChallengeId
+                                      })'" style="cursor: pointer;">
+            <td id="ch-name-td">
+                <p class="ch-name">@Html.DisplayFor(modelItem => el.ChallengeName)</p>
+                <p>@Html.DisplayFor(modelItem => el.ChallengeDesc)
+                blblblblb bwee veyrreg erherg er er ert eyrt</p>
+            </td>
+            <td>DadShark    4.5 sec.</td>
+            <td>37</td>
         </tr>
     }
     </tbody>

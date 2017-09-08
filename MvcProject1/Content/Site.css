@@ -29,3 +29,30 @@ textarea {
     top: 50%;
     right: 3%;
 }
+
+/*  Challenges Index Style  */
+
+h2 
+{
+    text-align: center;    
+}
+
+#challenges-table {
+    border-collapse: separate;
+    border-spacing: 50px 10px;
+    border-color: white;
+}
+
+#ch-row {
+ 
+}
+
+.ch-name {
+    font-size: 30px;
+}
+
+#ch-name-td {
+    width: 250px;
+}
+
+/*  end  */
